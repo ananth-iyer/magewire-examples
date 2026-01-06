@@ -1,0 +1,21 @@
+<section class="hero-image text-gray-700 body-font -mt-8 -mx-6 mb-10">
+    <div class="flex gap-4 items-center mb-2">
+        Set Start counter variable: <input type="number" wire:model="count" class="input w-20" />
+    </div>
+    <div class="flex gap-4 items-center mb-2">
+        Set Start counter method: <input type="number" value="<?= $magewire->count ?>" class="input w-20" />
+        <button class="btn" wire:click="setCounter($event.target.previousElementSibling.value)">
+            Set Counter
+        </button>
+    </div>
+    <div class="flex gap-4 items-center">
+        Counter: <?= $magewire->count ?>
+
+        <button class="btn" wire:click="increment">
+            Increase
+        </button>
+        <button class="btn" wire:click="decrease">
+            Decrease
+        </button>
+    </div>
+</section>
