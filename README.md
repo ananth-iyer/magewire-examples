@@ -4,11 +4,12 @@ Topics
 
 1. Counter examples with different user cases
 
-There 3 use cases right now. It works in Hyva theme or magewire js loaded.
+There 4 use cases right now. It works in Hyva theme or magewire js loaded.
 
 1. Auto update counter & after a second it updates
 2. Update on button click & it calls setCounter method in magewire compoenent class
 3. Increase & describe buttons & it calls two methods
+4. Magewire emit JS in template and listeners in PHP component
 
 All three are connected & you can learn how magewire works
 
