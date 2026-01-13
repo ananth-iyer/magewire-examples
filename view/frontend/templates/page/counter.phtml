@@ -1,0 +1,57 @@
+<section class="hero-image text-gray-700 body-font -mx-6 mb-6 pb-6">
+    <h1 class="text-3xl font-bold mb-6">Custom page</h1>
+    <div class="flex gap-4 mb-6" style="flex-direction: column">
+        <div class="font-bold">Two Number Sum example:</div>
+
+        <label>
+            Enter number 1 to add:
+            <input type="number" class="input w-20" id="n1" />
+        </label>
+
+        <label>
+            Enter number 2 to add:
+            <input type="number" class="input w-20" id="n2" />
+        </label>
+
+        <div class="font-bold">
+            Result: <?= $magewire->sum ?>
+        </div>
+
+        <button class="btn" wire:click="sumValues(document.getElementById('n1').value, document.getElementById('n2').value)">
+            Calculate Sum
+        </button>
+    </div>
+
+    <div class="font-bold">Counter example:</div>
+
+    <div class="flex gap-4 items-center mb-2">
+        Set Start counter variable: <input type="number" wire:model="count" class="input w-20" />
+    </div>
+    <div class="flex gap-4 items-center mb-2">
+        Set Start counter method: <input type="number" value="<?= $magewire->count ?>" class="input w-20" />
+        <button class="btn" wire:click="setCounter($event.target.previousElementSibling.value)">
+            Set Counter
+        </button>
+    </div>
+    <div class="flex gap-4 items-center mb-2">
+        magewire Emit event: <input type="number" id="emitInput" value="<?= $magewire->count ?>" class="input w-20" />
+        <button class="btn" onclick="window.textEmit()">
+            Set Counter
+        </button>
+    </div>
+    <div class="flex gap-4 items-center">
+        Counter: <?= $magewire->count ?>
+
+        <button class="btn" wire:click="increment">
+            Increase
+        </button>
+        <button class="btn" wire:click="decrease">
+            Decrease
+        </button>
+    </div>
+    <script>
+        function textEmit() {
+            magewire.emit('validate_zip_code', document.getElementById('emitInput').value);
+        };
+    </script>
+</section>

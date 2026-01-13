@@ -1,9 +1,13 @@
 <?php
 namespace AnanthIyer\MagewireExamples\Magewire;
 
+use Magento\TestFramework\Utility\FunctionDetector;
+
 class Counter extends \Magewirephp\Magewire\Component
 {
     public $count = 10;
+
+    public $sum = 0;
 
     /** @var string[] */
     protected $listeners = [
@@ -31,5 +35,10 @@ class Counter extends \Magewirephp\Magewire\Component
             $value = 0;
         }
         $this->count = (int)$value;
+    }
+
+    public function sumValues($n1, $n2): void
+    {
+        $this->sum = (int)$n1 + (int)$n2;
     }
 }
